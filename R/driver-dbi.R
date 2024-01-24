@@ -102,7 +102,7 @@ dbDisconnect_WrapperConnection <- function(conn) {
 dbSendQuery_WrapperConnection <- function(conn, statement, ...) {
   reader <- adbcdrivermanager::read_adbc(
     conn@parent_connection,
-    statement
+    unclass(statement)
   )
 
   new("WrapperResult", reader)
@@ -111,7 +111,7 @@ dbSendQuery_WrapperConnection <- function(conn, statement, ...) {
 dbGetQuery_WrapperConnection <- function(conn, statement, ...) {
   reader <- adbcdrivermanager::read_adbc(
     conn@parent_connection,
-    statement
+    unclass(statement)
   )
 
   adbcdrivermanager::with_adbc(reader, {

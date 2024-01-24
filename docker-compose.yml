@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  flightsql-sqlite:
+    image: voltrondata/flight-sql:latest
+    ports:
+      - 31337:31337
+    environment:
+      FLIGHT_PASSWORD: "flight_password"
+      # With TLS enabled I get:
+      # [FlightSQL] connection error: desc = "error reading server preface: EOF" (Unavailable; AuthenticateBasicToken)
+      # on the client and
+      # ssl_transport_security.cc:1495] Handshake failed with fatal error SSL_ERROR_SSL: error:0A00010B:SSL routines::wrong version number.
+      # on the server
+      TLS_ENABLED: "0"

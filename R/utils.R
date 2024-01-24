@@ -20,14 +20,14 @@ wrapper_test_flightsql_uri <- function() {
 #' @rdname wrapper_test_flightsql_uri
 #' @export
 wrapper_test_flightsql_username <- function() {
-  opt <- Sys.getenv("R_WRAPPER_FLIGHTSQL_TEST_USERNAME", "")
+  opt <- Sys.getenv("R_WRAPPER_FLIGHTSQL_TEST_USERNAME", "flight_username")
   if (identical(opt, "")) NULL else opt
 }
 
 #' @rdname wrapper_test_flightsql_uri
 #' @export
 wrapper_test_flightsql_password <- function() {
-  opt <- Sys.getenv("R_WRAPPER_FLIGHTSQL_TEST_PASSWORD", "")
+  opt <- Sys.getenv("R_WRAPPER_FLIGHTSQL_TEST_PASSWORD", "flight_password")
   if (identical(opt, "")) NULL else opt
 }
 
@@ -45,9 +45,6 @@ wrapper_test_con <- function() {
     wrapper(),
     wrapper_test_flightsql_uri(),
     username = wrapper_test_flightsql_username(),
-    password = wrapper_test_flightsql_password(),
-    database_options = c(
-      "adbc.flight.sql.client_option.tls_skip_verify" = "true"
-    )
+    password = wrapper_test_flightsql_password()
   )
 }

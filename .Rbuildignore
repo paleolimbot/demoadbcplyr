@@ -1,3 +1,5 @@
 ^demoadbcplyr\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^\.github$
+^docker-compose\.yml$
