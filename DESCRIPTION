@@ -26,3 +26,5 @@ Suggests:
 Config/testthat/edition: 3
 Remotes:
   adbcflightsql=apache/arrow-adbc/r/adbcflightsql
+URL: https://github.com/paleolimbot/demoadbcplyr
+BugReports: https://github.com/paleolimbot/demoadbcplyr/issues
