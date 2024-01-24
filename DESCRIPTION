@@ -1,0 +1,28 @@
+Package: demoadbcplyr
+Title: Demonstrate 'dbplyr' through 'ADBC'
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Dewey",
+           family = "Dunnington",
+           role = c("aut", "cre"),
+           email = "dewey@voltrondata.com",
+           comment = c(ORCID = "0000-0002-9415-4582"))
+Description: Demonstrates 'dbplyr' generating 'SQL' through the
+  'adbcdrivermanager' package.
+License: Apache License (>= 2)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    adbcdrivermanager,
+    adbcflightsql,
+    DBI,
+    dbplyr,
+    methods
+Suggests: 
+    dplyr,
+    testthat (>= 3.0.0),
+    withr
+Config/testthat/edition: 3
+Remotes:
+  adbcflightsql=apache/arrow-adbc/r/adbcflightsql
