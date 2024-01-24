@@ -1,0 +1,44 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# demoadbcplyr
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of demoadbcplyr is to be a proof-of-concept for the hardest possible use of dbplyr generating SQL to send to an ADBC driver. This example uses the ADBC FlightSQL driver, which itself wraps a connection to DuckDB. The proof-of-concept here uses dbplyr with a DBI connection that is pretending to be Postgres for just long enough to generate Postgres-flavoured SQL.
+
+## Installation
+
+You can install the development version of demoadbcplyr from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("paleolimbot/demoadbcplyr")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+# Start the FlightSQL test server with `docker compose up`
+library(demoadbcplyr)
+library(dplyr, warn.conflicts = FALSE)
+
+con <- wrapper_test_con()
+tbl(con, "NATION") |> 
+  arrange(n_nationkey)
+```

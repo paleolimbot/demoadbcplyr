@@ -3,3 +3,4 @@
 ^LICENSE\.md$
 ^\.github$
 ^docker-compose\.yml$
+^README\.Rmd$
