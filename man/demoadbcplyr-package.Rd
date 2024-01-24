@@ -8,6 +8,14 @@
 \description{
 Demonstrates 'dbplyr' generating 'SQL' through the 'adbcdrivermanager' package.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/paleolimbot/demoadbcplyr}
+  \item Report bugs at \url{https://github.com/paleolimbot/demoadbcplyr/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Dewey Dunnington \email{dewey@voltrondata.com} (\href{https://orcid.org/0000-0002-9415-4582}{ORCID})
 

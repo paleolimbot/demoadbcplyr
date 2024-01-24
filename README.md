@@ -29,9 +29,11 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 # Start the FlightSQL test server with `docker compose up`
+
 library(demoadbcplyr)
 library(dplyr, warn.conflicts = FALSE)
 
+Sys.setenv(R_WRAPPER_FLIGHTSQL_TEST_URI = "grpc+tls://localhost:31337")
 con <- wrapper_test_con()
 tbl(con, "NATION") |> 
   arrange(n_nationkey)

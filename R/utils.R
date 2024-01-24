@@ -45,6 +45,9 @@ wrapper_test_con <- function() {
     wrapper(),
     wrapper_test_flightsql_uri(),
     username = wrapper_test_flightsql_username(),
-    password = wrapper_test_flightsql_password()
+    password = wrapper_test_flightsql_password(),
+    database_options = c(
+      "adbc.flight.sql.client_option.tls_skip_verify" = "true"
+    )
   )
 }
