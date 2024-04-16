@@ -28,7 +28,7 @@ pak::pak("paleolimbot/demoadbcplyr")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-# Start the FlightSQL test server with `docker compose up`
+# Start the FlightSQL test server with `docker compose up`, requires ~1 GB download
 
 library(demoadbcplyr)
 library(dplyr, warn.conflicts = FALSE)
